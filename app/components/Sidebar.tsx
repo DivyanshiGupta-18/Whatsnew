@@ -2,11 +2,8 @@
 
 import React from 'react';
 import { Filter, X } from 'lucide-react';
-import { useSidebarToggle } from './SidebarToggleContext'; 
 
-const Sidebar = ({ onFilterChange, filters }) => { 
-  const { showSidebar, closeSidebar } = useSidebarToggle(); 
-
+const Sidebar = ({ onFilterChange, filters, onClose, isOpen }) => {
   const categories = ['electronics', 'clothing', 'footwear', 'accessories'];
   const brands = ['Nike', 'Sony', 'Apple', 'Samsung', 'Canon', 'Ray-Ban', 'Herschel', 'Uniqlo'];
 
@@ -35,13 +32,13 @@ const Sidebar = ({ onFilterChange, filters }) => {
   };
 
   return (
-    <div className={`fixed inset-y-0 left-0 bg-gray-50 p-6 w-64 z-40 transition-transform transform ${showSidebar ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:min-h-screen md:shadow-none shadow-lg`}>
+    <div className={`fixed inset-y-0 left-0 bg-gray-50 p-6 w-64 z-40 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 md:min-h-screen md:shadow-none shadow-lg`}>
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center">
           <Filter size={20} className="mr-2" />
           <h2 className="text-xl font-semibold">Filters</h2>
         </div>
-        <button onClick={closeSidebar} className="md:hidden text-gray-500 hover:text-gray-700" aria-label="Close filters"> {/* Use closeSidebar from context */}
+        <button onClick={onClose} className="md:hidden text-gray-500 hover:text-gray-700" aria-label="Close filters">
           <X size={24} />
         </button>
       </div>

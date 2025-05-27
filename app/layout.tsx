@@ -1,8 +1,6 @@
 "use client"; 
 
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
 import { SidebarToggleProvider } from "@/app/components/SidebarToggleContext";
 import React, { useState, useEffect, createContext, useContext } from 'react';
 
@@ -88,28 +86,34 @@ export const useCart = () => {
 };
 
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [showCart, setShowCart] = useState(false);
+
+  const handleCartClick = () => setShowCart(true);
+  const handleCartClose = () => setShowCart(false);
 
   return (
     <html lang="en">
       <body>
         <CartProvider>
           <SidebarToggleProvider>
-            <Navbar
-              onSearch={() => console.log('Search triggered from layout')}
-              onCartClick={() => console.log('Cart clicked from layout')}
-              onProfileClick={() => console.log('Profile clicked from layout')}
-            />
+
+            {showCart && (
+              <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-end">
+                <div className="w-80 h-full bg-white shadow-lg p-4 overflow-y-auto">
+                  <div className="flex justify-between items-center mb-4">
+                    <h2 className="text-lg font-bold">Your Cart</h2>
+                    <button onClick={handleCartClose} className="text-red-600 text-sm">Close</button>
+                  </div>
+                  {/* Cart Items */}
+                  <p>No items yet!</p>
+                </div>
+              </div>
+            )}
+
             <div className="flex flex-col min-h-screen">
-              <main className="flex-1">
-                {children}
-              </main>
+              <main className="flex-1">{children}</main>
             </div>
-            <Footer />
           </SidebarToggleProvider>
         </CartProvider>
       </body>
