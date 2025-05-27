@@ -1,14 +1,15 @@
 "use client" 
 
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect } from 'react'; /
 import { Star, Plus, Minus, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 import Sidebar from './components/Sidebar';
 import { useSidebarToggle } from './components/SidebarToggleContext';
 
-import { useCart } from './layout'; 
 
+import { useCart } from './layout';
 
+// Sample product data 
 const sampleProducts = [
   {
     id: 1,
@@ -94,10 +95,10 @@ const sampleProducts = [
 
 // Product Card Component
 const ProductCard = ({ product, onClick }) => {
-  const { addToCart } = useCart(); 
+  const { addToCart } = useCart(); // This line uses useCart
 
   const handleAddToCart = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation(); // Prevent opening product detail
     addToCart(product);
   };
 
@@ -167,6 +168,7 @@ const ProductDetail = ({ product, onBack }) => {
       </button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-md">
+        {/* Image Section */}
         <div className="space-y-4">
           <div className="relative">
             <img
@@ -269,7 +271,7 @@ const ProductDetail = ({ product, onBack }) => {
 
 // Cart Component
 const Cart = ({ onClose }) => {
-  const { cartItems, updateQuantity, removeFromCart, getCartTotal } = useCart(); 
+  const { cartItems, updateQuantity, removeFromCart, getCartTotal } = useCart(); // This line uses useCart
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -357,6 +359,7 @@ const Cart = ({ onClose }) => {
 };
 
 
+// Main App Component 
 const EcommerceApp = () => {
   const { showSidebar, closeSidebar } = useSidebarToggle();
 
@@ -389,21 +392,23 @@ const EcommerceApp = () => {
     setSelectedProduct(null);
   };
 
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-  };
+  // REMOVED these unused functions from EcommerceApp:
+  // const handleSearch = (term) => {
+  //   setSearchTerm(term);
+  // };
 
-  const handleCartClick = () => {
-    setShowCart(true);
-  };
+  // const handleCartClick = () => {
+  //   setShowCart(true);
+  // };
 
-  const handleCloseCart = () => {
-    setShowCart(false);
-  };
+  // const handleCloseCart = () => { // Keep this if used by the Cart component
+  //   setShowCart(false);
+  // };
 
-  const handleProfileClick = () => {
-    alert('Profile functionality would be implemented here');
-  };
+  // const handleProfileClick = () => {
+  //   alert('Profile functionality would be implemented here');
+  // };
+
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
@@ -446,17 +451,18 @@ const EcommerceApp = () => {
           </main>
         </div>
       )}
-      {showCart && <Cart onClose={handleCloseCart} />}
+      {/* Ensure onClose is correctly passed to Cart */}
+      {showCart && <Cart onClose={() => setShowCart(false)} />} {/* Pass setter directly or a dedicated handler */}
     </div>
   );
 };
 
 // Root page component
-const PageWrapper = () => { 
+const PageWrapper = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true); 
+    setIsMounted(true);
   }, []);
 
   if (!isMounted) {
