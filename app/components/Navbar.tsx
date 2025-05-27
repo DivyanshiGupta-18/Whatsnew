@@ -39,11 +39,11 @@ const Navbar = ({ onSearch, cartItemsCount, onCartClick, onProfileClick, onToggl
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSearch(e)}
-              className="w-full px-4 py-2 pr-10 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="w-full px-4 py-2 pr-10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-300"
             />
             <button
               onClick={handleSearch}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-700"
               aria-label="Search"
             >
               <Search size={20} />
