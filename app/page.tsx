@@ -95,10 +95,10 @@ const sampleProducts = [
 
 // Product Card Component
 const ProductCard = ({ product, onClick }) => {
-  const { addToCart } = useCart(); // This line uses useCart
+  const { addToCart } = useCart(); 
 
   const handleAddToCart = (e) => {
-    e.stopPropagation(); // Prevent opening product detail
+    e.stopPropagation(); 
     addToCart(product);
   };
 
@@ -139,7 +139,7 @@ const ProductCard = ({ product, onClick }) => {
 
 // Product Detail Component
 const ProductDetail = ({ product, onBack }) => {
-  const { addToCart } = useCart(); // This line uses useCart
+  const { addToCart } = useCart(); 
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -392,24 +392,6 @@ const EcommerceApp = () => {
     setSelectedProduct(null);
   };
 
-  // REMOVED these unused functions from EcommerceApp:
-  // const handleSearch = (term) => {
-  //   setSearchTerm(term);
-  // };
-
-  // const handleCartClick = () => {
-  //   setShowCart(true);
-  // };
-
-  // const handleCloseCart = () => { // Keep this if used by the Cart component
-  //   setShowCart(false);
-  // };
-
-  // const handleProfileClick = () => {
-  //   alert('Profile functionality would be implemented here');
-  // };
-
-
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       {currentView === 'product' && selectedProduct ? (
@@ -451,7 +433,7 @@ const EcommerceApp = () => {
           </main>
         </div>
       )}
-      {/* Ensure onClose is correctly passed to Cart */}
+      
       {showCart && <Cart onClose={() => setShowCart(false)} />} {/* Pass setter directly or a dedicated handler */}
     </div>
   );
