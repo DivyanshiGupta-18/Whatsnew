@@ -5,7 +5,7 @@ import { SidebarToggleProvider } from "@/app/components/SidebarToggleContext";
 import { CartProvider } from "@/app/components/CartContext";
 import React, { useState } from "react";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Rootlayout({ children }: { children: React.ReactNode }) {
   const [showCart, setShowCart] = useState(false);
 
   const handleCartClose = () => setShowCart(false);
