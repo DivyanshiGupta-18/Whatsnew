@@ -89,7 +89,6 @@ export const useCart = () => {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [showCart, setShowCart] = useState(false);
 
-  const handleCartClick = () => setShowCart(true);
   const handleCartClose = () => setShowCart(false);
 
   return (

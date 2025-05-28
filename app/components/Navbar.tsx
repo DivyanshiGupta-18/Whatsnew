@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Search, ShoppingCart, User, Menu, Store } from 'lucide-react';
-import { useCart } from '../page'; 
 
 const Navbar = ({ onSearch, cartItemsCount, onCartClick, onProfileClick, onToggleSidebar }) => {
   const [searchTerm, setSearchTerm] = useState('');
