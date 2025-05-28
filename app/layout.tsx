@@ -1,8 +1,5 @@
 import "./globals.css";
-import { SidebarToggleProvider } from "@/app/components/SidebarToggleContext";
-import { CartProvider } from "@/app/components/CartContext";
-import ClientLayout from "@/app/components/ClientLayout";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Your App Name",
@@ -17,11 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CartProvider>
-          <SidebarToggleProvider>
-            <ClientLayout>{children}</ClientLayout>
-          </SidebarToggleProvider>
-        </CartProvider>
+        <div className="flex flex-col min-h-screen">
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );
