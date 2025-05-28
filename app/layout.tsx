@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import { SidebarToggleProvider } from "@/app/components/SidebarToggleContext";
-import { CartProvider } from "@/app/components/CartContext"; // Path based on your structure
+import { CartProvider } from "@/app/components/CartContext";
 import React, { useState } from "react";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -31,7 +31,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
               </div>
             )}
-
             <div className="flex flex-col min-h-screen">
               <main className="flex-1">{children}</main>
             </div>
