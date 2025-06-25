@@ -23,9 +23,9 @@ const Navbar = ({ onSearch, cartItemsCount, onCartClick, onProfileClick, onToggl
           >
             <Menu size={24} />
           </button>
-          {/* Store Icon and Name */}
+          
           <div className="flex items-center gap-2">
-            <Store size={32} className="text-white" /> {/* Lucide Store icon */}
+            <Store size={32} className="text-white" /> 
             <div className="text-2xl font-bold">WhatsNew</div>
           </div>
         </div>
