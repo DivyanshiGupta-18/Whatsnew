@@ -1,15 +1,13 @@
 "use client"
 
 import React, { useState, useEffect, createContext, useContext } from 'react';
-// Import only the icons needed for THIS file
 import { Star, Plus, Minus, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Import the separated components
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 
-// Cart Context (consider moving this to app/components/CartContext.js for better organization)
+// Cart Context 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
@@ -178,7 +176,7 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
 
   const handleAddToCart = (e) => {
-    e.stopPropagation(); // Prevent navigating to product detail when clicking "Add to Cart"
+    e.stopPropagation();
     addToCart(product);
   };
 
@@ -223,7 +221,6 @@ const ProductDetail = ({ product, onBack }) => {
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // For demo, we'll use the same image multiple times to simulate a carousel
   const images = [product.image, "https://via.placeholder.com/400x300?text=Product+View+2", "https://via.placeholder.com/400x300?text=Product+View+3"];
 
   const handleAddToCart = () => {
