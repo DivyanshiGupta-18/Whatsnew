@@ -6,6 +6,10 @@ import { Star, Plus, Minus, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import HeroSection from './components/HeroSection';
+import PopularSection from './components/PopularSection';
+// import { HeroSection } from './components/HeroSection';
+// import { PopularSection } from './components/PopularSection';
 
 // Cart Context 
 const CartContext = createContext();
@@ -572,9 +576,15 @@ const EcommerceApp = () => {
 // Root App with Context Provider
 const page = () => {
   return (
+    <>
+    {/* <HeroSection />
+    <PopularSection /> */}
+    <HeroSection />
+    <PopularSection />
     <CartProvider>
       <EcommerceApp />
     </CartProvider>
+    </>
   );
 };
 
