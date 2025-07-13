@@ -221,9 +221,9 @@ export default function PopularSection() {
                                   {item.originalPrice}
                                 </span>
                               </div>
-                              <button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-2 rounded font-semibold">
-                                Add to Cart
-                              </button>
+                               <button className="w-full bg-gradient-to-r from-blue-600 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-bold py-2 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">
+                Add to Cart
+              </button>
                             </div>
                           </div>
                         </div>

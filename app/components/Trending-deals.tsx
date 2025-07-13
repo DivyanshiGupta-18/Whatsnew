@@ -1,8 +1,6 @@
 "use client"
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-
 
 
 const TrendingDealsPage: React.FC = () => {
@@ -32,10 +30,6 @@ const TrendingDealsPage: React.FC = () => {
     {
       name: "Sports Sneakers",
       image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    },
-    {
-      name: "Wireless Headphones",
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
       name: "Stylish Glasses",
@@ -135,7 +129,7 @@ const TrendingDealsPage: React.FC = () => {
                 <span className="text-sm text-gray-500">• 2,847 reviews</span>
               </div>
 
-              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+              <button className="w-full bg-gradient-to-r from-blue-600 to-gray-900 hover:from-gray-900 hover:to-gray-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">
                 Add to Cart
               </button>
             </div>
