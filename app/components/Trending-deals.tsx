@@ -1,6 +1,9 @@
 "use client"
 
 import React, { useState } from 'react';
+import Image from 'next/image';
+
+
 
 const TrendingDealsPage: React.FC = () => {
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -31,6 +34,10 @@ const TrendingDealsPage: React.FC = () => {
       image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
+      name: "Wireless Headphones",
+      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    },
+    {
       name: "Stylish Glasses",
       image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
@@ -59,7 +66,7 @@ const TrendingDealsPage: React.FC = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
             Trending Deals for Men
           </h1>
-          <p className="text-gray-600 text-center mt-2">Discover the best deals on men's fashion and accessories</p>
+          <p className="text-gray-600 text-center mt-2">Discover the best deals on Men&apos;s fashion and accessories</p>
         </div>
       </header>
 
@@ -136,7 +143,7 @@ const TrendingDealsPage: React.FC = () => {
 
           {/* Right Side - Equipment */}
           <section className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Men's Equipment</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Men&apos;s Equipment</h3>
             
             <div className="space-y-6">
               {equipmentItems.map((item, index) => (

@@ -122,7 +122,7 @@ export default function PopularSection() {
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900">Popular Styles For Women's</h2>
+          <h2 className="text-4xl font-bold text-gray-900">Popular Styles For Women&apos;s</h2>
           <p className="text-xl text-gray-600 mt-2">
             Discover the most loved fashion trends that are taking the world by storm.
           </p>
