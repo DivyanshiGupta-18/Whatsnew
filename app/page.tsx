@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import PopularSection from './components/PopularSection';
 import ProductDeal from './components/ProductDeal';
@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 const page = () => {
   return (
     <>
-    {/* <Navbar /> */}
+    <Navbar />
     <HeroSection />
     <PopularSection />
     <ProductDeal />

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 
 const TrendingDealsPage: React.FC = () => {
@@ -137,7 +137,7 @@ const TrendingDealsPage: React.FC = () => {
 
           {/* Right Side - Equipment */}
           <section className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Men&apos;s Equipment</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Mens Equipment</h3>
             
             <div className="space-y-6">
               {equipmentItems.map((item, index) => (

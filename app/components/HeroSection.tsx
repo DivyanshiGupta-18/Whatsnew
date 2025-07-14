@@ -21,7 +21,7 @@ const slides = [
     tagline: "Technology that transforms your life",
     subtext: "Free shipping on orders over $99",
     buttonText: "Explore",
-     bgColor: "bg-gradient-to-r from-[#FFC6C6] to-[#5a3c2e]", 
+    bgColor: "bg-gradient-to-r from-[#FFC6C6] to-[#5a3c2e]", 
   },
   {
     id: 3,
